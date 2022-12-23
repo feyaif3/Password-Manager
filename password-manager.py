@@ -6,7 +6,7 @@ from tkinter import *
 #----------------UI Setup------------------#
 window = Tk()
 window.title("Password Manager")
-window.config(padx=20, pady=20) #added padding
+window.config(padx=70, pady=70) #added padding
 
 canvas = Canvas(height=200, width=200) #creating the canvas with the specific dimensions
 logo_img = PhotoImage(file="logo.png")
@@ -15,17 +15,17 @@ canvas.grid(row=0, column=1) #this is where the image will be in the page
 
 #Labels
 web_label = Label(text="Website:") #website label
-web_label.grid(row=1, column=0, columnspan=2) #label position for website
+web_label.grid(row=1, column=0) #label position for website
 email_label = Label(text="Username/Email:")
-email_label.grid(row=2, column=0, columnspan=2)
+email_label.grid(row=2, column=0)
 pass_label = Label(text="Password:")
 pass_label.grid(row=3, column=0)
 
 #Entries
 web_entry = Entry(width=35)#entry for website
-web_entry.grid(row=1, column=1)#position of the entry
+web_entry.grid(row=1, column=1, columnspan=2)#position of the entry bar
 email_entry = Entry(width=35)
-email_entry.grid(row=2, column=1)
+email_entry.grid(row=2, column=1, columnspan=2)
 pass_entry = Entry(width=21)
 pass_entry.grid(row=3, column=1)
 
