@@ -6,7 +6,7 @@ from tkinter import *
 #----------------UI Setup------------------#
 window = Tk()
 window.title("Password Manager")
-window.config(padx=50, pady=50) #added padding
+window.config(padx=10, pady=10) #added padding
 
 canvas = Canvas(height=200, width=200) #creating the canvas with the specific dimensions
 logo_img = PhotoImage(file="logo.png")
@@ -22,15 +22,17 @@ pass_label = Label(text="Password:")
 pass_label.grid(row=3, column=0)
 
 #Entries
-web_entry = Entry(width=35)#entry for website
+web_entry = Entry(width=43)#entry for website
 web_entry.grid(row=1, column=1, columnspan=2)#position of the entry bar
-email_entry = Entry(width=35)
+web_entry.focus()#user can start typing without clicking web entry bar
+email_entry = Entry(width=43)
 email_entry.grid(row=2, column=1, columnspan=2)
-pass_entry = Entry(width=21)
+#email_entry.insert(0, "useremail@mail.com")-- (This is used to autofil email)
+pass_entry = Entry(width=27)
 pass_entry.grid(row=3, column=1)
 
 #Buttons
-create_password_button = Button(text="Generate Password")#creates button that generates password
+create_password_button = Button(text="Create Password")#creates button that generates password
 create_password_button.grid(row=3, column=2)#position of the button
 add_button = Button(text="Add Password", width=36)
 add_button.grid(row=4, column=1, columnspan=2)
