@@ -2,7 +2,8 @@ from tkinter import *
 #------------Password Generator------------#
 
 #--------------Save Password---------------#
-
+def add():
+    open("password.txt", "a")
 #----------------UI Setup------------------#
 window = Tk()
 window.title("Password Manager")
@@ -34,6 +35,6 @@ pass_entry.grid(row=3, column=1)
 #Buttons
 create_password_button = Button(text="Create Password")#creates button that generates password
 create_password_button.grid(row=3, column=2)#position of the button
-add_button = Button(text="Add Password", width=36)
+add_button = Button(text="Add Password", width=36, command=add)
 add_button.grid(row=4, column=1, columnspan=2)
 window.mainloop()
