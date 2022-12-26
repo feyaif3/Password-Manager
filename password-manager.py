@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter import messagebox
 #------------Password Generator------------#
 
 #--------------Save Password---------------#
@@ -7,11 +8,14 @@ def add():
     email = email_entry.get()
     password = pass_entry.get()
     
-    with open("password.txt", "a") as password_file: #this will create an open a txt file
-        password_file.write(f"{website} | {email} | {password}\n") #this is the format that the text file will save data in
-        web_entry.delete(0, END) #this deletes what's in the entry when add button is clicked.
-        email_entry.delete(0, END)
-        pass_entry.delete(0, END)
+    is_ok = messagebox.askokcancel(title=Website, message=f"Details entered:\n Email:{email} "
+                                                    f"\nPassword: {password} \nIs thsi correct?")
+    if is_ok:
+        with open("password.txt", "a") as password_file: #this will create an open a txt file
+            password_file.write(f"{website} | {email} | {password}\n") #this is the format that the text file will save data in
+            web_entry.delete(0, END) #this deletes what's in the entry when add button is clicked.
+            email_entry.delete(0, END)
+            pass_entry.delete(0, END)
 #----------------UI Setup------------------#
 window = Tk()
 window.title("Password Manager")
