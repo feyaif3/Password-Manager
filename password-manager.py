@@ -16,8 +16,7 @@ def create_password():
     shuffle(password_list)
 
     password = "".join(password_list) #all characters will join together to create the password
-
-    print(f"Your password is: {password}")
+    pass_entry.insert(0, password)
 #--------------Save Password---------------#
 
 def add():
@@ -66,7 +65,7 @@ pass_entry = Entry(width=27)
 pass_entry.grid(row=3, column=1)
 
 #Buttons
-create_password_button = Button(text="Create Password")#creates button that generates password
+create_password_button = Button(text="Create Password", command=create_password)#creates button that generates password
 create_password_button.grid(row=3, column=2)#position of the button
 add_button = Button(text="Add Password", width=36, command=add)
 add_button.grid(row=4, column=1, columnspan=2)
