@@ -8,7 +8,7 @@ numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 symbols = ['!', '#', '$', '%', '&', '@', '-', '*', '+','?','£','.',',',]
 
 password_letters = [random.choice(letters) for _ in range(randint(8,10))] #choose random list of letters in range for 8-10
-password_numbers = [random.choice(numbers) for _ in range(randint(2,4))]
+password_numbers = [random.choice(numbers) for _ in range(randint(3,5))]
 password_symbols = [random.choice(symbols) for _ in range(randint(2,4))]
 
 password_list = password_letters + password_numbers + password_symbols
