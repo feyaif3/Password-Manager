@@ -15,14 +15,7 @@ password_letters = [random.choice(letters) for _ in range(random_letters)]#choos
 password_numbers = [random.choice(numbers) for _ in range(random_numbers)]
 password_symbols = [random.choice(symbols) for _ in range(random_symbols)]
 
-
-
-for char in range(random_symbols):
-  password_list += random.choice(symbols)
-
-for char in range(random_numbers):
-  password_list += random.choice(numbers)
-
+password_list = password_letters + password_numbers + password_symbols
 random.shuffle(password_list)
 
 password = ""
