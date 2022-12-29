@@ -14,7 +14,7 @@ password_symbols = [random.choice(symbols) for _ in range(randint(2,4))]
 password_list = password_letters + password_numbers + password_symbols
 shuffle(password_list)
 
-password = "".join(password_list)
+password = "".join(password_list) #all characters will join together to create the password
 
 print(f"Your password is: {password}")
 #--------------Save Password---------------#
